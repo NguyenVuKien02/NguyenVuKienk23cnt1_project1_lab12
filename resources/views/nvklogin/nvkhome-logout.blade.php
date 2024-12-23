@@ -5,7 +5,7 @@
         h1{
             border-radius: 5px;
             text-align: center;
-            background: url('{{ asset('/images/tải xuống (2).jpg') }}') no-repeat center center/cover;
+            background: url('{{ asset('/images/Picsart_24-03-22_11-51-52-423.jpg') }}') no-repeat center center/cover;
             padding: 50px;
             font-size: 36px;
 
