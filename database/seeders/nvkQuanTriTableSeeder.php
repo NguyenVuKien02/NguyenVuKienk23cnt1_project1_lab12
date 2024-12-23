@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 class nvkQuanTriTableSeeder extends Seeder
 {
@@ -14,10 +13,10 @@ class nvkQuanTriTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $nvkMatKhau = Hash::make('02102005');
+        $nvkMatKhau = md5("02102005");
 
-            DB::table('nvk_quan_tri')->insert([
-                'nvkTaiKhoan' => 'nguyenvukien02@gmail.com',
+            DB::table('nvk_quantri')->insert([
+                'nvkTaiKhoan' => "nguyenvukien02@gmail.com",
                 'nvkMatKhau' => $nvkMatKhau,
                 'nvkTrangThai' => 0
             ]);

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('nvk_QuanTri', function (Blueprint $table) {
-            $table->string('nvkID');
+            $table->id();
             $table->string('nvkTaiKhoan',255)->unique();
             $table->string('nvkMatKhau',255);
             $table->tinyInteger('nvkTrangThai');
