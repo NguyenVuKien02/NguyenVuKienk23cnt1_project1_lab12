@@ -49,6 +49,11 @@
       <a href="/nvkAdmins/nvk-loai-san-pham">Dạnh Sách Loại Sản Phẩm</a>
     </li>
 
+    <!-- Liên kết tới trang quản lý sản phẩm -->
+    <li class="list-group-item">
+        <a href="/nvkAdmins/nvk-san-pham">Dạnh Sách Sản Phẩm</a>
+      </li>
+
     <!-- Các mục khác -->
     <li class="list-group-item"><a href="">Danh Sách Người Dùng</a></li>
     <li class="list-group-item"><a href="">And a fifth one</a></li>

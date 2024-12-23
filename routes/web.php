@@ -3,6 +3,7 @@
 use App\Http\Controllers\nvk_QuanTri_controller;
 use App\Http\Controllers\nvkSP;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\nvkSanPham;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,5 @@ Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-createQT',[nvk_QuanTri_controller::
 Route::post('/nvkAdmins/nvk-loai-san-pham/nvk-createQT',[nvk_QuanTri_controller::class,'nvkcreatQTsubmit'])->name('admin-nvk.createsubmitQT');
 #chi tiết
 Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-chitietQTQT/{id}',[nvk_QuanTri_controller::class,'nvkchitietqt'])->name('admin-nvk.chitietqt');
+#list
+Route::get('/nvkAdmins/nvk-san-pham',[nvkSanPham::class,'nvklist'])->name('admin-nvk.list');
