@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\nvk_loai_san_pham;
 use App\Models\nvk_QuanTri;
-
+use App\Models\nvk_san_pham;
+use App\Models\nvk_KhachHang_model;
+use App\Models\nvk_hoadon_model;
+use App\Models\nvk_chitiehoadon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -85,9 +88,21 @@ class nvkSP extends Controller
         // Lấy tất cả loại sản phẩm từ bảng
         $nvkloaisanpham = nvk_loai_san_pham::all();
         $nvkquantri = nvk_QuanTri::all();
+        $nvksanpham = nvk_san_pham::all();
+        $nvkkhachhang = nvk_KhachHang_model::all();
+        $nvkHoaDon = nvk_hoadon_model::all();
+        $nvkCTHoaDon = nvk_chitiehoadon::all();
 
         // Truyền dữ liệu vào view
-        return view('nvkAdmins.nvkLoaiSanPham.nvk-trangchu', ['nvkloaisanpham' => $nvkloaisanpham, 'nvkquantri'=>$nvkquantri]);
+        return view('nvkAdmins.nvkLoaiSanPham.nvk-trangchu',
+        [
+            'nvkloaisanpham' => $nvkloaisanpham,
+            'nvkquantri'=>$nvkquantri,
+            'nvksanpham' => $nvksanpham,
+            'nvkkhachhang' => $nvkkhachhang,
+            'nvkHoaDon' => $nvkHoaDon,
+            'nvkCTHoaDon' => $nvkCTHoaDon
+        ]);
     }
     # databoard liên kết tới trang chủ
     public function datataboard(Request $request)
@@ -97,15 +112,35 @@ class nvkSP extends Controller
             $nvkloaisanpham = nvk_loai_san_pham::count();
 
             // Lấy số lượng admin
-            $nvkquantri = nvk_quantri::count();
+            $nvkquantri = nvk_QuanTri::count();
+
+            // Lấy số lượng sản phẩm
+            $nvksanpham = nvk_san_pham::count();
+
+            // Lấy số lượng khách hàng
+            $nvkkhachhang = nvk_KhachHang_model::count();
+
+            // Lấy số lượng Hóa Đơn
+            $nvkHoaDon = nvk_hoadon_model::count();
+
+            // Lấy số lượng chi tiết Hóa Đơn
+            $nvkCTHoaDon = nvk_chitiehoadon::count();
 
             // Ghi log thông tin
             Log::info('Số lượng loại sản phẩm:', ['count' => $nvkloaisanpham]);
             Log::info('Số lượng admin:', ['count' => $nvkquantri]);
+            Log::info('Số lượng sản phẩm: ', ['count' => $nvksanpham]);
+            Log::info('Số lượng khách hàng: ', ['count' => $nvkkhachhang]);
+            Log::info('Số lượng hóa đơn: ',['count' => $nvkHoaDon]);
+            Log::info('Số lượng chi tiết hóa đơn: ',['count' => $nvkCTHoaDon]);
             // Trả về view với dữ liệu
             return view('nvkAdmins.nvkLoaiSanPham.nvk-trangchu', [
                 'nvkloaisanpham' => $nvkloaisanpham,
                 'nvkquantri' => $nvkquantri,
+                'nvksanpham' => $nvksanpham,
+                'nvkkhachhang' => $nvkkhachhang,
+                'nvkHoaDon' => $nvkHoaDon,
+                'nvkCTHoaDon' => $nvkCTHoaDon,
             ]);
         } else {
             // Nếu không có session admin thì redirect về trang login

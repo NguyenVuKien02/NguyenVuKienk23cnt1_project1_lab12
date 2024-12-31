@@ -14,8 +14,8 @@
         <span><i class="fa-solid fa-bars"></i> <input type="text"  placeholder="  Search" style="border-radius: 10px" style="border-color: brown"></span>
 
         <div>
-            <a href="{{route('home')}}" class="btn btn-success" >Home</a>
-            <a href="{{route('admin-nvk.loginsubmit')}}" class="btn btn-danger">Đăng xuất</a>
+            <a href="{{route('home')}}" class="btn btn-success" ><i class="fa-solid fa-house"></i> Home</a>
+            <a href="{{route('admin-nvk.loginsubmit')}}" class="btn btn-danger">Đăng xuất <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
             <span class="badge bg-danger me-2" ><i class="fa-solid fa-comments" ></i>3</span>
             <span class="badge bg-warning text-dark"><i class="fa-solid fa-bell"></i>15</span>
 

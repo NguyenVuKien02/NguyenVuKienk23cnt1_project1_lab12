@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <style>
         .sideBar{
-            width: 250px;
+            width: 300px;
             height: 790px;
             background: rgb(113, 112, 141);
         }
         .Wrapper{
-            width: calc(100% - 250px );
+            width: calc(100% - 300px );
             height: 790px;
             background: #fff;
         }

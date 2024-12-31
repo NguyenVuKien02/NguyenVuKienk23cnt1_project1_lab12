@@ -14,22 +14,34 @@
                 <h3>Thông tin chi tiết</h3>
             </div>
             <div class="card-body">
-                @if ($nvkloaisanpham)
+                @if ($nvksanpham)
                     <p class="card-text">
-                        <b>Mã Loại Sản Phẩm:</b> {{ $nvkloaisanpham->nvkMaloai }}
+                        <b>Mã sản phẩm</b> {{ $nvksanpham->nvkMaSanPham }}
                     </p>
                     <p>
-                        <b>Tên Loại Sản Phẩm:</b> {{ $nvkloaisanpham->nvkTenLoai }}
+                        <b>Tên sản phẩm</b> {{ $nvksanpham->nvkTenSanPham }}
                     </p>
                     <p>
-                        <b>Trạng Thái:</b> {{ $nvkloaisanpham->nvkTrangThai }}
+                        <b>hình ảnh</b> {{ $nvksanpham->nvkHinhAnh }}
+                    </p>
+                    <p>
+                        <b>Số lượng</b> {{ $nvksanpham->nvkSoLuong }}
+                    </p>
+                    <p>
+                        <b>Đơn giá</b> {{ $nvksanpham->nvkDonGia }}
+                    </p>
+                    <p>
+                        <b>Mã loại</b> {{ $nvksanpham->nvkMaloai }}
+                    </p>
+                    <p>
+                        <b>Trạng thái</b> {{ $nvksanpham->nvkTrangThai }}
                     </p>
                 @else
                     <p>Không tìm thấy thông tin sản phẩm.</p>
                 @endif
             </div>
             <div class="card-footer">
-                <a href="/nvkAdmins/nvk-loai-san-pham" class="btn btn-primary">Quay lại</a>
+                <a href="/nvkAdmins/nvk-san-pham" class="btn btn-primary">Quay lại</a>
             </div>
         </div>
     </section>

@@ -1,14 +1,19 @@
+
 @extends('_layout.admins.master')
 @section('title','Danh Sach San Pham')
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 @section('content-body')
-    <div class="container">
+<!-- Bao toàn bộ trang -->
+<div class="d-flex flex-column min-vh-100">
+    <!-- Nội dung chính -->
+    <main class="container flex-grow-1">
         <div class="row ">
             <div class="col-12">
                 <h1>Danh Sách Sản Phẩm</h1>
-                <a href="{{route('admin-nvk.createsubmit')}}" class="btn btn-success">Thêm Mới </a>
+                <a href="{{route('admin-nvk.createsp')}}" class="btn btn-success">Thêm Mới </a>
             </div>
         </div>
         <div class="row">
@@ -22,7 +27,7 @@
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Mã loại</th>
-                        <th>Trạng tháithái</th>
+                        <th>Trạng thái</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,17 +36,23 @@
                             <td class="text-center">{{ $loop->iteration }}</td>
                             <td>{{ $item->nvkMaSanPham }}</td>
                             <td>{{ $item->nvkTenSanPham }}</td>
-                            <td>{{ $item->nvkHinhAnh }}</td>
+                            <td>
+                                @if($item->nvkHinhAnh)
+                                <img src="{{ asset('images/' . $item->nvkHinhAnh) }}" alt="Hình ảnh" style="width: 100px; height: auto;">
+                                @else
+                                    Không có hình ảnh
+                                @endif
+                            </td>
                             <td>{{ $item->nvkSoLuong }}</td>
                             <td>{{ $item->nvkDonGia }}</td>
                             <td>{{ $item->nvkMaloai }}</td>
                             <td>{{ $item->nvkTrangThai }}</td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <a href="{{ route('admin-nvk.chitiet', ['id' => $item->id]) }}" class="btn btn-primary me-2">chi tiết <i class="fa-solid fa-circle-info"></i></a>
-                                    <a href="{{ route('admin-nvk.edit', ['id' => $item->id]) }}" class="btn btn-primary me-2">Sửa<i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+                                    <a href="{{ route('admin-nvk.chitietsp', ['id' => $item->id]) }}" class="btn btn-primary btn-sm">chi tiết <i class="fa-solid fa-circle-info"></i></a>
+                                    <a href="{{ route('admin-nvk.editsp', ['nvkID' => $item->id]) }}" class="btn btn-primary btn-sm">Sửa<i class="fa-solid fa-arrow-up-from-bracket"></i></a>
                                     <a href="{{ route('admin-nvk.delete', ['id' => $item->nvkMaSanPham]) }}"
-                                        class="btn btn-danger me-2"
+                                        class="btn btn-danger btn-sm"
                                         onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">Xóa  <i class="fa-solid fa-trash"></i></a>
                                 </div>
                             </td>
@@ -53,6 +64,8 @@
                     @endforelse
                 </tbody>
             </table>
+
         </div>
-    </div>
+    </main>
+</div>
 @endsection
