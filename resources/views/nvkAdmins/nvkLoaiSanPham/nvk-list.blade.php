@@ -81,9 +81,9 @@
                             <td>{{ $item->nvkTrangThai }}</td>
                             <td>
 
-                                    <a href="{{ route('admin-nvk.chitiet', ['id' => $item->id]) }}" class="btn btn-primary btn-sm">Chi tiết <i class="fa-solid fa-circle-info"></i></a>
+                                    <a href="{{ route('admin-nvk.chitiet', ['id' => $item->id]) }}" class="btn btn-primary btn-sm">Thông tin <i class="fa-solid fa-circle-info"></i></a>
                                     <a href="{{ route('admin-nvk.edit', ['id' => $item->id]) }}" class="btn btn-warning btn-sm">Sửa <i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="{{ route('admin-nvk.delete', ['id' => $item->nvkMaloai]) }}"
+                                    <a href="{{ route('admin-nvk.deletelsp', ['id' => $item->nvkMaloai]) }}"
                                         class="btn btn-danger btn-sm"
                                         onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">Xóa <i class="fa-solid fa-trash"></i></a>
 

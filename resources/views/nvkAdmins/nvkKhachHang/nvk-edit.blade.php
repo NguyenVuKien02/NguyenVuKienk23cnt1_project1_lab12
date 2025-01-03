@@ -35,6 +35,12 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
+                        <label for="nvkMatKhau" class="col-sm-2 col-form-label">Mật Khẩu</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nvkMatKhau" name="nvkMatKhau" value="{{ $khachHang->nvkMatKhau }}">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
                         <label for="nvkDienThoai" class="col-sm-2 col-form-label">Điện Thoại</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="nvkDienThoai" name="nvkDienThoai" value="{{ $khachHang->nvkDienThoai }}">

@@ -25,6 +25,9 @@
                         <b>Email:</b> {{ $khachHang->nvkEmail }}
                     </p>
                     <p>
+                        <b>Email:</b> {{ $khachHang->nvkMatKhau }}
+                    </p>
+                    <p>
                         <b>Điện Thoại:</b> {{ $khachHang->nvkDienThoai }}
                     </p>
                     <p>

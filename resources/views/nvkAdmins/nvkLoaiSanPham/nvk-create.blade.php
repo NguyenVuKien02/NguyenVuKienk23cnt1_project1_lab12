@@ -15,14 +15,14 @@
 
                     <div class="card-body container-fruid">
                         <div class="mb-3 row">
-                            <label for="nvkMaloai  " class="col-sm-2 col-form-label">Ma Loai</label>
+                            <label for="nvkMaloai  " class="col-sm-2 col-form-label">Mã Loại</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="nvkMaloai" name="nvkMaloai">
 
                             </div>
                           </div>
                         <div class="mb-3 row">
-                            <label for="nvkTenLoai " class="col-sm-2 col-form-label">Ten Loai</label>
+                            <label for="nvkTenLoai " class="col-sm-2 col-form-label">Tên Loại</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="nvkTenLoai" name="nvkTenLoai">
                             </div>

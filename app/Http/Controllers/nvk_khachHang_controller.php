@@ -23,6 +23,7 @@ class nvk_khachHang_controller extends Controller
             'nvkMakhachhang' => 'required|unique:nvk_khachhang,nvkMakhachhang|max:255',
             'nvkHotenkhachhang' => 'required|max:255',
             'nvkEmail' => 'required|email|unique:nvk_khachhang,nvkEmail|max:255',
+            'nvkMatKhau' => 'required|min:6|max:12',
             'nvkDienThoai' => 'required|unique:nvk_khachhang,nvkDienThoai|max:255',
             'nvkDiaChi' => 'required|max:255',
             'nvkNgayDK' => 'required|date',
@@ -34,6 +35,7 @@ class nvk_khachHang_controller extends Controller
         $khachHang->nvkMakhachhang = $request->nvkMakhachhang;
         $khachHang->nvkHotenkhachhang = $request->nvkHotenkhachhang;
         $khachHang->nvkEmail = $request->nvkEmail;
+        $khachHang->nvkMatKhau = $request->nvkMatKhau;
         $khachHang->nvkDienThoai = $request->nvkDienThoai;
         $khachHang->nvkDiaChi = $request->nvkDiaChi;
         $khachHang->nvkNgayDK = $request->nvkNgayDK;
@@ -77,6 +79,7 @@ class nvk_khachHang_controller extends Controller
         $request->validate([
             'nvkHotenkhachhang' => 'required|string|max:255',
             'nvkEmail' => 'required|email|max:255',
+            'nvkMatKhau' => 'required|min:6|max:12',
             'nvkDienThoai' => 'required|string|max:255',
             'nvkDiaChi' => 'required|string|max:255',
             'nvkNgayDK' => 'required|date',
@@ -91,6 +94,7 @@ class nvk_khachHang_controller extends Controller
 
         $khachHang->nvkHotenkhachhang = $request->nvkHotenkhachhang;
         $khachHang->nvkEmail = $request->nvkEmail;
+        $khachHang->nvkMatKhau = $request->nvkMatKhau;
         $khachHang->nvkDienThoai = $request->nvkDienThoai;
         $khachHang->nvkDiaChi = $request->nvkDiaChi;
         $khachHang->nvkNgayDK = $request->nvkNgayDK;

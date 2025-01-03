@@ -49,7 +49,7 @@ Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-chitiet/{id}',[nvkSP::class,'nvkchi
 Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-edit/{id}',[nvkSP::class,'nvkedit'])->name('admin-nvk.edit');
 Route::post('/nvkAdmins/nvk-loai-san-pham/nvk-edit/{id}',[nvkSP::class,'nvkeditsubmit'])->name('admin-nvk.editsubmit');
 #xóa
-Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-delete/{id}', [nvkSP::class, 'nvkdelete'])->name('admin-nvk.delete');
+Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-delete/{id}', [nvkSP::class, 'nvkdeletelsp'])->name('admin-nvk.deletelsp');
 
 #----------------------Quản trị----------------------
 #list quan tri

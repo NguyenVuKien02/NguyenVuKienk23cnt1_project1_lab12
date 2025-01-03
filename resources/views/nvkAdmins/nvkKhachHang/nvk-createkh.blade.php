@@ -41,6 +41,17 @@
                             @enderror
                             </div>
                           </div>
+
+                          <div class="mb-3 row">
+                            <label for="nvkMatKhau" class="col-sm-2 col-form-label" style="font-weight: bold">Mật Khẩu:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="nvkMatKhau" name="nvkMatKhau" value="{{old('nvkMatKhau')}}">
+                                @error('nvkMatKhau')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                            </div>
+                          </div>
+
                         <div class="mb-3 row">
                             <label for="nvkDienThoai" class="col-sm-2 col-form-label" style="font-weight: bold">Điện Thoại:</label>
                             <div class="col-sm-10">

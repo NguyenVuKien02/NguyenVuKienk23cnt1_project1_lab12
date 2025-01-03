@@ -19,21 +19,25 @@
         }
 
         .sideBar {
-            width: 265px; /* Cố định chiều rộng */
-            background: rgb(113, 112, 141);
+            width: 300px; /* Cố định chiều rộng */
+            /*background: rgb(113, 112, 141);*/
+            background: linear-gradient(135deg, rgb(45, 52, 54), rgb(89, 98, 117), rgb(133, 94, 66));
+
             flex-shrink: 0; /* Không co lại nếu nội dung lớn */
+            border-radius: 8px 8px 8px 8px;
         }
 
         .Wrapper {
             flex-grow: 1; /* Chiếm toàn bộ không gian còn lại */
-            background: #fff;
+            background: #ffff;
             display: flex;
             flex-direction: column; /* Bố cục dọc */
             overflow: auto; /* Thanh cuộn khi nội dung dài */
             overflow-x: auto; /* Thêm thanh cuộn ngang nếu nội dung quá dài */
+            border-radius: 8px 8px 8px 8px;
         }
 
-        .sideBar{
+        /*.sideBar{
             width: 300px;
             height: 790px;
             background: rgb(113, 112, 141);
@@ -42,10 +46,10 @@
             width: calc(100% - 300px );
             height: 790px;
             background: #fff;
-        }
+        }*/
     </style>
 </head>
-<body style="background:#ccc">
+<body style="background: linear-gradient(135deg, rgb(198, 239, 206), rgb(253, 246, 227), rgb(255, 235, 211), rgb(255, 224, 230), rgb(228, 223, 249));">
     <section class="container-fluid d-flex">
         <nav class="sideBar m-1">
             @include('_layout.admins._menu')

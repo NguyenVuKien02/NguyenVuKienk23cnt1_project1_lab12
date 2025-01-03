@@ -13,7 +13,7 @@ class nvkSanPham extends Controller
     public function nvklist(Request $request)
     {
         $search = $request->input('search', null);
-        $nvksanpham = nvk_san_pham::paginate(5);
+        $nvksanpham = nvk_san_pham::paginate(3);
         return view('nvkAdmins.nvkSanPham.nvk-listsp', ['nvksanpham' => $nvksanpham, 'search' => $search ]);
     }
 

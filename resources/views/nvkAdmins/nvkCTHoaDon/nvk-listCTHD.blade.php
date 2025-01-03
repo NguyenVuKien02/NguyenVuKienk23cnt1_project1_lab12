@@ -100,7 +100,7 @@
                             <td >
                                 <div class="d-flex align-items-center">
                                     <a href="{{ route('nvk.chitietCTHD', ['id' => $item->id]) }}" class="btn btn-primary" style="font-weight: bold"><i class="fa-solid fa-circle-info"></i></a>
-                                    <a href="{{ route('nvk.editsubmitCTHD', ['id' => $item->id]) }}" class="btn btn-warning" style="font-weight: bold"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    {{--<a href="{{ route('nvk.editsubmitCTHD', ['id' => $item->id]) }}" class="btn btn-warning" style="font-weight: bold"><i class="fa-solid fa-pen-to-square"></i></a>--}}
                                     <a href="{{ route('nvk.deleteCTHD', ['id' => $item->id]) }}"
                                         class="btn btn-danger" style="font-weight: bold"
                                         onclick="return confirm('Bạn có chắc chắn muốn xóa không?');"><i class="fa-solid fa-trash"></i>

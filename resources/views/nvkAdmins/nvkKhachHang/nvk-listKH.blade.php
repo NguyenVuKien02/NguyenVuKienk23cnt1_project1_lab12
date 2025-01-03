@@ -69,6 +69,7 @@
                         <th>Mã khách hàng</th>
                         <th>Họ tên khách hàng </th>
                         <th>Email</th>
+                        <th>Mật khẩu</th>
                         <th>Điện thoại</th>
                         <th>Địa chỉ</th>
                         <th>Ngày đăng kký</th>
@@ -83,13 +84,14 @@
                             <td>{{ $item->nvkMakhachhang  }}</td>
                             <td>{{ $item->nvkHotenkhachhang }}</td>
                             <td>{{ $item->nvkEmail }}</td>
+                            <td>{{ $item->nvkMatKhau }}</td>
                             <td>{{ $item->nvkDienThoai }}</td>
                             <td>{{ $item->nvkDiaChi }}</td>
                             <td>{{ $item->nvkNgayDK }}</td>
                             <td>{{ $item->nvkTrangThai }}</td>
                             <td >
                                 <div class="d-flex align-items-center">
-                                    <a href="{{ route('nvk.chitietkh', ['id' => $item->id]) }}" class="btn btn-primary btn-sm" >Chi tiết<i class="fa-solid fa-circle-info"></i></a>
+                                    <a href="{{ route('nvk.chitietkh', ['id' => $item->id]) }}" class="btn btn-primary btn-sm" >TT<i class="fa-solid fa-circle-info"></i></a>
                                     <a href="{{ route('nvk.editKHsubmit', ['id' => $item->id]) }}" class="btn btn-warning btn-sm" >Sửa<i class="fa-solid fa-pen-to-square"></i></a>
                                     <a href="{{ route('nvk.deleteKH', ['id' => $item->id]) }}"
                                         class="btn btn-danger btn-sm"

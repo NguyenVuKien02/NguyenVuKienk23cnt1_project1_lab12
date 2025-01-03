@@ -19,7 +19,7 @@
             <label for="nvkMakhachhang">Mã khách hàng:</label>
             <select name="nvkMakhachhang" id="nvkMakhachhang"  class="form-control" required>
                 @foreach($nvkkhachhang as $khachhang)
-                    <option value="{{ $khachhang->id }}">{{ $khachhang->nvkHotenkhachhang }}</option>
+                    <option value="{{ $khachhang->id }}">{{ $khachhang->nvkMakhachhang }}-{{ $khachhang->nvkHotenkhachhang }}</option>
                 @endforeach
             </select>
             @error('nvkMakhachhang')

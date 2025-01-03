@@ -79,7 +79,7 @@ class nvkSP extends Controller
         return redirect('/nvkAdmins/nvk-loai-san-pham');
     }
     #delete
-        public function nvkdelete($id)
+        public function nvkdeletelsp($id)
         {
             nvk_loai_san_pham::where('nvkMaloai',$id)->delete();
             return redirect('/nvkAdmins/nvk-loai-san-pham');

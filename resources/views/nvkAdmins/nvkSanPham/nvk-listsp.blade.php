@@ -97,7 +97,7 @@
                             <td>{{ $item->nvkTrangThai }}</td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <a href="{{ route('admin-nvk.chitietsp', ['id' => $item->id]) }}" class="btn btn-primary btn-sm">Chi tiết <i class="fa-solid fa-circle-info"></i></a>
+                                    <a href="{{ route('admin-nvk.chitietsp', ['id' => $item->id]) }}" class="btn btn-primary btn-sm">TT <i class="fa-solid fa-circle-info"></i></a>
                                     <a href="{{ route('admin-nvk.editsp', ['nvkID' => $item->id]) }}" class="btn btn-warning btn-sm">Sửa <i class="fa-solid fa-pen-to-square"></i></i></a>
                                     <a href="{{ route('admin-nvk.delete', ['id' => $item->nvkMaSanPham]) }}"
                                         class="btn btn-danger btn-sm"
@@ -113,7 +113,7 @@
                 </tbody>
             </table>
             <!-- Liên kết phân trang -->
-            <div class="">
+            <div class="" >
                 <ul class="pagination">
                 {{ $nvksanpham->links() }}
             </div>

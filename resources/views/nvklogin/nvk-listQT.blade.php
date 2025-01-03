@@ -44,7 +44,7 @@
                             <td>{{ $item->nvkMatKhau }}</td>
                             <td>{{ $item->nvkTrangThai }}</td>
                             <td>
-                                <a href="{{ route('admin-nvk.chitietqt', ['id' => $item->id]) }}" class="btn btn-primary">chi tiết <i class="fa-solid fa-circle-info"></i></a>
+                                <a href="{{ route('admin-nvk.chitietqt', ['id' => $item->id]) }}" class="btn btn-primary">Thông tin <i class="fa-solid fa-circle-info"></i></a>
                                 {{-- <a href="{{ route('admin-nvk.chitiet', ['id' => $item->id]) }}" class="btn btn-primary">chi tiết <i class="fa-solid fa-circle-info"></i></a>
                                 <a href="{{ route('admin-nvk.edit', ['id' => $item->id]) }}" class="btn btn-primary">Sửa<i class="fa-solid fa-arrow-up-from-bracket"></i></a>
                                 <a href="{{ route('admin-nvk.delete', ['id' => $item->nvkMaloai]) }}"
