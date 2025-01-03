@@ -24,12 +24,12 @@
     <div class="mt-3">
         <p>
             Bạn có
-            <span class="badge bg-danger" >{{ $messages_count }}</span>
+            <span class="badge bg-danger" >99+</span>
             tin nhắn mới.
         </p>
         <p>
             Bạn có
-            <span class="badge bg-warning text-dark">{{ $notifications_count }}</span>
+            <span class="badge bg-warning text-dark">99+</span>
             thông báo.
         </p>
     </div>

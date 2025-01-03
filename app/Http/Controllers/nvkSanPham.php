@@ -10,11 +10,13 @@ use Illuminate\Http\Request;
 
 class nvkSanPham extends Controller
 {
-    //
-    public function nvklist(){
-        $nvksanpham = nvk_san_pham::all();
-        return view('nvkAdmins.nvkSanPham.nvk-listsp',['nvksanpham'=> $nvksanpham]);
+    public function nvklist(Request $request)
+    {
+        $search = $request->input('search', null);
+        $nvksanpham = nvk_san_pham::paginate(5);
+        return view('nvkAdmins.nvkSanPham.nvk-listsp', ['nvksanpham' => $nvksanpham, 'search' => $search ]);
     }
+
      // Form thêm mới sản phẩm
      public function nvkcreatsp()
      {
@@ -60,7 +62,7 @@ class nvkSanPham extends Controller
         $nvksanpham->nvkTrangThai = $request->nvkTrangThai;
         $nvksanpham->save();
 
-        return redirect()->route('admin-nvk.listsp')->with('success', 'Thêm sản phẩm thành công!');
+        return redirect('/nvkAdmins/nvk-san-pham')->with('success', 'Thêm sản phẩm thành công!');
     }
 
         #chi tiết
@@ -73,9 +75,9 @@ class nvkSanPham extends Controller
             if (!$nvksanpham) {
                 return redirect('/nvkAdmins/nvk-san-pham')->with('error', 'Không tìm thấy thông tin sản phẩm.');
             }
-
+            $nvkloaisanpham = nvk_loai_san_pham::all();
             // Trả về view với dữ liệu
-            return view('nvkAdmins.nvkSanPham.nvk-chitietsp', ['nvksanpham' => $nvksanpham]);
+            return view('nvkAdmins.nvkSanPham.nvk-chitietsp', compact('nvksanpham','nvkloaisanpham'));
         }
 
     #edit

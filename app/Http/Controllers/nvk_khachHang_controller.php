@@ -9,7 +9,7 @@ class nvk_khachHang_controller extends Controller
     // List sản phẩm
     public function nvklistKH()
     {
-        $nvkkhachhang = nvk_KhachHang_model::all();
+        $nvkkhachhang = nvk_KhachHang_model::paginate(5);
         return view('nvkAdmins.nvkKhachHang.nvk-listKH', ['nvkkhachhang' => $nvkkhachhang]);
     }
     //them mowi

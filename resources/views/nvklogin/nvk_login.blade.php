@@ -16,6 +16,10 @@
             font-family: 'Arial', sans-serif;
             background: url('{{ asset('/images/pexels-rpnickson-2559941.jpg') }}') no-repeat center center/cover;
         }
+        .btn-primary:hover {
+            background-color: #2575fc; /* Màu xanh lam nhạt khi hover */
+            transform: scale(1.02); /* Hiệu ứng phóng to nhẹ */
+        }
 
     </style>
 </head>
@@ -26,10 +30,11 @@
                 <form action="{{route('admin-nvk.loginsubmit')}}" method="post" class="bg-white p-5 rounded shadow-sm"  style="width: 500px;" >
                     @csrf
                     <h1 class="text-center"><i class="fa-solid fa-circle-user"></i></h1>
+                    <h3><center> Đăng nhập hệ thống</center></h3>
 
                     <!-- Tên tài khoản -->
                     <div class="form-group mb-3">
-                        <label for="nvkTaiKhoan">Tài khoản</label>
+                        <label for="nvkTaiKhoan"><i class="fa-solid fa-user"></i> Tài khoản</label>
                         <input type="text" name="nvkTaiKhoan" id="nvkTaiKhoan" placeholder="Nhập tên tài khoản" class="form-control">
                         @error('nvkTaiKhoan')
                             <span class="text-danger"> {{$message}} </span>
@@ -38,7 +43,7 @@
 
                     <!-- Mật khẩu -->
                     <div class="form-group mb-3">
-                        <label for="nvkMatKhau">Mật khẩu</label>
+                        <label for="nvkMatKhau"><i class="fa-solid fa-lock"></i> Mật khẩu</label>
                         <input type="password" name="nvkMatKhau" id="nvkMatKhau" placeholder="Nhập mật khẩu" class="form-control">
                         @error('nvkMatKhau')
                             <span class="text-danger"> {{$message}} </span>

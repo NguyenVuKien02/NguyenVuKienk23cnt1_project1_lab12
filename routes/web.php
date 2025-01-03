@@ -21,8 +21,17 @@ use App\Http\Controllers\nvk_cthoadon_controller;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin/nvk-login',[nvk_QuanTri_controller::class,'nvkLogin'])->name('login.nvklog');
-Route::post('/admin/nvk-login',[nvk_QuanTri_controller::class,'nvkLoginsubmit'])->name('login.nvklogsubmit');
+
+#trangchủ
+Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-trangchu', [nvkSP::class, 'nvktrangchu'])->name('admin-nvk.loaisanpham.trangchu');
+#databoard
+Route::get('/nvkAdmins/nvk-trangchu', [nvkSP::class, 'datataboard'])->name('admin-nvk.trangchu');
+#login
+Route::get('/nvkAdmins/nvk-login', [nvk_QuanTri_controller::class, 'nvkLogin'])->name('admin-nvk.login');
+Route::post('/nvkAdmins/nvk-login', [nvk_QuanTri_controller::class, 'nvkLoginsubmit'])->name('admin-nvk.loginsubmit');
+#home-logout
+Route::get('/home', [nvk_QuanTri_controller::class, 'nvklogout'])->name('home');
+
 #Admin route
 Route::get('/nvk-admins',function(){
     return view('nvkAdmins.index');
@@ -42,15 +51,6 @@ Route::post('/nvkAdmins/nvk-loai-san-pham/nvk-edit/{id}',[nvkSP::class,'nvkedits
 #xóa
 Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-delete/{id}', [nvkSP::class, 'nvkdelete'])->name('admin-nvk.delete');
 
-#trangchủ
-Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-trangchu', [nvkSP::class, 'nvktrangchu'])->name('admin-nvk.loaisanpham.trangchu');
-#databoard
-Route::get('/nvkAdmins/nvk-trangchu', [nvkSP::class, 'datataboard'])->name('admin-nvk.trangchu');
-#login
-Route::get('/nvkAdmins/nvk-login', [nvk_QuanTri_controller::class, 'nvkLogin'])->name('admin-nvk.login');
-Route::post('/nvkAdmins/nvk-login', [nvk_QuanTri_controller::class, 'nvkLoginsubmit'])->name('admin-nvk.loginsubmit');
-#home-logout
-Route::get('/home', [nvk_QuanTri_controller::class, 'nvklogout'])->name('home');
 #----------------------Quản trị----------------------
 #list quan tri
 Route::get('/nvkAdmins/nvk-listqt',[nvk_QuanTri_controller::class,'nvklistQT'])->name('nvk-admins-listQT');

@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 use App\Models\nvk_quantri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class nvk_QuanTri_controller extends Controller
 {
+
+
+
     public function nvkLogin(){
         return view('nvklogin.nvk_login');
     }
@@ -13,7 +17,13 @@ class nvk_QuanTri_controller extends Controller
         // Validation form
         $validationData = $request->validate([
             'nvkTaiKhoan' => 'required|string',
-            'nvkMatKhau' => 'required|min:6|max:12'
+            'nvkMatKhau' => 'required|min:6|max:12',
+        ], [
+            'nvkTaiKhoan.required' => 'Tên tài khoản là bắt buộc.',
+            'nvkTaiKhoan.string' => 'Tên tài khoản phải là một chuỗi ký tự.',
+            'nvkMatKhau.required' => 'Mật khẩu là bắt buộc.',
+            'nvkMatKhau.min' => 'Mật khẩu phải có ít nhất 6 ký tự.',
+            'nvkMatKhau.max' => 'Mật khẩu không được vượt quá 12 ký tự.',
         ]);
         // Lấy giá trị từ form
         $email = $request->input('nvkTaiKhoan');
@@ -41,7 +51,7 @@ class nvk_QuanTri_controller extends Controller
     }
     public function nvklistQT()
     {
-        $nvkquantri = nvk_quantri::all();
+        $nvkquantri = nvk_quantri::paginate(5);
         return view('nvklogin.nvk-listQT',['nvkquantri' => $nvkquantri]);
     }
        //them mowi

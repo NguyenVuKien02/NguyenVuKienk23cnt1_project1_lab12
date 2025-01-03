@@ -71,7 +71,7 @@
                             <div class="col-sm-10">
                               <select name="nvkMaloai" id="nvkMaloai" class="form-control" >
                                 @foreach ( $nvkloaisanpham as $item)
-                                    <option value="{{$item->nvkMaloai}}">{{$item->nvkTenLoai}}</option>
+                                    <option value="{{$item->nvkMaloai}}">{{$item->nvkMaloai}}-{{$item->nvkTenLoai}}</option>
                                 @endforeach
                               </select>
                                 @error('nvkMaloai')

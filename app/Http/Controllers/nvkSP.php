@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Log;
 
 class nvkSP extends Controller
 {
-    //
     public function nvklist(){
-        $nvkloaisanpham = nvk_loai_san_pham::all();
+        $nvkloaisanpham = nvk_loai_san_pham::paginate(5);
         return view('nvkAdmins.nvkLoaiSanPham.nvk-list',['nvkloaisanpham'=> $nvkloaisanpham]);
     }
+
+
     //them mowi
     public function nvkcreat(){
         return view('nvkAdmins.nvkLoaiSanPham.nvk-create');

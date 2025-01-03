@@ -2,19 +2,31 @@
 @section('title','Danh Sach Admin')
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .table{
+        text-align: center;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center;     /*Căn giữa theo chiều dọc */
+    }
+    table{
+        text-align: center;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        /*align-items: center;     Căn giữa theo chiều dọc */
+        }
+    </style>
 </head>
 @section('content-body')
     <div class="container">
         <div class="row ">
             <div class="col-12">
                 <h1>Danh Sách Admin</h1>
-                <a href="{{route('admin-nvk.createsubmitQT')}}" class="btn btn-success">Thêm Mới </a>
+                <a href="{{route('admin-nvk.createsubmitQT')}}" class="btn btn-success">Thêm mới admin <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
         <div class="row">
             <table class="table table-bordered">
                 <thead>
-                    <tr>
+                    <tr class="chu">
                         <th>#</th>
                         <th>id</th>
                         <th>Tài Khoản</th>

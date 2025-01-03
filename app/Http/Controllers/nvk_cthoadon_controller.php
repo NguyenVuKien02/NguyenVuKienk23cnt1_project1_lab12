@@ -10,7 +10,7 @@ class nvk_cthoadon_controller extends Controller
 {
     public function nvklistCTHD()
     { //paginate(5)
-        $nvkctHoaDon = nvk_chitiehoadon::all();
+        $nvkctHoaDon = nvk_chitiehoadon::paginate(5);
         return view('nvkAdmins.nvkCTHOADON.nvk-listCTHD', ['nvkctHoaDon' => $nvkctHoaDon]);
     }
     #insert
