@@ -90,4 +90,49 @@ class nvk_QuanTri_controller extends Controller
         return view('nvklogin.nvkquantri.nvk-chitietqt', ['nvkquantri' => $nvkquantri]);
     }
 
+    public function nvkeditqt($id)
+    {
+        // Tìm bản ghi theo id
+        $nvkquantri = nvk_QuanTri::find($id);
+
+        // Kiểm tra nếu không tìm thấy bản ghi
+        if (!$nvkquantri) {
+            return redirect('nvk-admins-listQT')->with('error', 'Không tìm thấy thông tin sản phẩm.');
+        }
+
+        // Trả về view với dữ liệu
+        return view('nvklogin.nvkquantri.nvk-editqt', ['nvkquantri' => $nvkquantri]);
+    }
+    public function nvkeditsubmit(Request $request, $id)
+    {
+        // Tìm bản ghi cần sửa
+        $nvkquantri = nvk_QuanTri::find($id);
+
+        // Kiểm tra nếu không tìm thấy
+        if (!$nvkquantri) {
+            return redirect()->route('nvk-admins-listQT')->with('error', 'Không tìm thấy thông tin quản trị.');
+        }
+
+        // Xác thực dữ liệu
+        $request->validate([
+            'nvkTaiKhoan' => 'required|unique:nvk_quantri,nvkTaiKhoan,' . $id, // Bỏ qua bản ghi hiện tại
+            'nvkMatKhau' => 'required',
+            'nvkTrangThai' => 'required|boolean',
+        ]);
+
+        // Cập nhật dữ liệu
+        $nvkquantri->nvkTaiKhoan = $request->nvkTaiKhoan;
+        $nvkquantri->nvkMatKhau = $request->nvkMatKhau;
+        $nvkquantri->nvkTrangThai = $request->nvkTrangThai;
+
+        // Lưu vào cơ sở dữ liệu
+        $nvkquantri->save();
+
+        return redirect()->route('nvk-admins-listQT')->with('success', 'Cập nhật thông tin quản trị thành công!');
+    }
+    public function nvkQTdelete($id){
+        $nvkquantri = nvk_QuanTri::findOrFail($id);
+        $nvkquantri->delete();
+        return redirect()->route('nvk-admins-listQT')->with('message', 'Admin đã được xoá thành công!');
+    }
 }

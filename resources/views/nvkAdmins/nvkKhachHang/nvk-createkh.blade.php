@@ -92,7 +92,7 @@
                                         value="1"
                                         checked
                                     />
-                                    <label for="nvkTrangThai1" class="form-check-label">Hiển Thị</label>
+                                    <label for="nvkTrangThai1" class="form-check-label">Hoạt động</label>
                                 </div>
 
                                 <div class="form-check form-check-inline">
@@ -103,7 +103,7 @@
                                         name="nvkTrangThai"
                                         value="0"
                                     />
-                                    <label for="nvkTrangThai0" class="form-check-label">Khóa</label>
+                                    <label for="nvkTrangThai0" class="form-check-label">Không Hoạt động</label>
                                 </div>
                             </div>
                             @error('nvkTrangThai')

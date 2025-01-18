@@ -87,10 +87,10 @@
             <label>Trạng Thái</label>
             <div>
                 <input type="radio" id="active" name="nvkTrangThai" value="1" {{ old('nvkTrangThai') == '1' ? 'checked' : '' }} checked>
-                <label for="active">Hiển Thị</label>
+                <label for="active">Hoạt động</label>
 
                 <input type="radio" id="inactive" name="nvkTrangThai" value="0" {{ old('nvkTrangThai') == '0' ? 'checked' : '' }}>
-                <label for="inactive">Khóa</label>
+                <label for="inactive">Không Hoạt động</label>
             </div>
             @error('nvkTrangThai')
             <span class="text-danger">{{ $message }}</span>

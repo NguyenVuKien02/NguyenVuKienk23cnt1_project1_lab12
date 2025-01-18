@@ -24,18 +24,12 @@ Route::get('/', function () {
 
 #trangchủ
 Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-trangchu', [nvkSP::class, 'nvktrangchu'])->name('admin-nvk.loaisanpham.trangchu');
-#databoard
-Route::get('/nvkAdmins/nvk-trangchu', [nvkSP::class, 'datataboard'])->name('admin-nvk.trangchu');
 #login
 Route::get('/nvkAdmins/nvk-login', [nvk_QuanTri_controller::class, 'nvkLogin'])->name('admin-nvk.login');
 Route::post('/nvkAdmins/nvk-login', [nvk_QuanTri_controller::class, 'nvkLoginsubmit'])->name('admin-nvk.loginsubmit');
 #home-logout
 Route::get('/home', [nvk_QuanTri_controller::class, 'nvklogout'])->name('home');
 
-#Admin route
-Route::get('/nvk-admins',function(){
-    return view('nvkAdmins.index');
-});
 #----------------------Loại sản phẩm----------------------
 #list
 Route::get('/nvkAdmins/nvk-loai-san-pham',[nvkSP::class,'nvklist'])->name('admin-nvk.list');
@@ -60,6 +54,12 @@ Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-createQT',[nvk_QuanTri_controller::
 Route::post('/nvkAdmins/nvk-loai-san-pham/nvk-createQT',[nvk_QuanTri_controller::class,'nvkcreatQTsubmit'])->name('admin-nvk.createsubmitQT');
 #chi tiết
 Route::get('/nvkAdmins/nvk-loai-san-pham/nvk-chitietQTQT/{id}',[nvk_QuanTri_controller::class,'nvkchitietqt'])->name('admin-nvk.chitietqt');
+# sửa
+Route::get('/nvkAdmins/nvk-quan-tri/nvk-edit/{id}',[nvk_QuanTri_controller::class,'nvkeditqt'])->name('admin-nvk.editqt');
+# sửa submit
+Route::post('/nvkAdmins/nvk-quan-tri/nvk-edit/{id}',[nvk_QuanTri_controller::class,'nvkeditsubmit'])->name('admin-nvk.editsubmitQT');
+# delete
+Route::get('/nvkAdmins/nvk-quan-tri/nvk-delete/{id}',[nvk_QuanTri_controller::class,'nvkQTdelete'])->name('admin-nvk.deleteqt');
 #----------------------Sản phẩm----------------------
 #list
 Route::get('/nvkAdmins/nvk-san-pham',[nvkSanPham::class,'nvklist'])->name('admin-nvk.listsp');

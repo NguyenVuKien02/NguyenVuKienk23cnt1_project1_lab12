@@ -38,23 +38,22 @@
                 <tbody>
                     @forelse ($nvkquantri as $item)
                         <tr>
-                            <td class="text-center">{{ $loop->iteration }}</td>
+                            <td class="text-center">{{ $loop->iteration }}{{--Trả về số thứ tự--}}</td>
                             <td>{{ $item->id  }}</td>
                             <td>{{ $item->nvkTaiKhoan  }}</td>
                             <td>{{ $item->nvkMatKhau }}</td>
                             <td>{{ $item->nvkTrangThai }}</td>
                             <td>
-                                <a href="{{ route('admin-nvk.chitietqt', ['id' => $item->id]) }}" class="btn btn-primary">Thông tin <i class="fa-solid fa-circle-info"></i></a>
-                                {{-- <a href="{{ route('admin-nvk.chitiet', ['id' => $item->id]) }}" class="btn btn-primary">chi tiết <i class="fa-solid fa-circle-info"></i></a>
-                                <a href="{{ route('admin-nvk.edit', ['id' => $item->id]) }}" class="btn btn-primary">Sửa<i class="fa-solid fa-arrow-up-from-bracket"></i></a>
-                                <a href="{{ route('admin-nvk.delete', ['id' => $item->nvkMaloai]) }}"
-                                    class="btn btn-danger"
-                                    onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">Xóa  <i class="fa-solid fa-trash"></i></a> --}}
+                                <a href="{{ route('admin-nvk.chitietqt', ['id' => $item->id]) }}" class="btn btn-primary btn-sm">Thông tin <i class="fa-solid fa-circle-info"></i></a>
+                                <a href="{{ route('admin-nvk.editqt', ['id' => $item->id]) }}" class="btn btn-warning btn-sm">Sửa<i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+                                <a href="{{ route('admin-nvk.deleteqt', ['id' => $item->id]) }}"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">Xóa  <i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <th colspan="5" class="text-center">Chưa có thông tin quan trị</th>
+                            <th colspan="5" class="text-center">Chưa có thông tin admin</th>
                         </tr>
                     @endforelse
                 </tbody>
